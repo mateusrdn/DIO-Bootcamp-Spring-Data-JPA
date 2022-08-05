@@ -3,6 +3,8 @@ package com.dio.bootcamp.academia.digital.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,12 +36,12 @@ public class AlunoController {
 	}
 
 	@PostMapping(path = "aluno")
-	public Aluno create(@RequestBody Aluno aluno) {
+	public Aluno create(@Valid @RequestBody Aluno aluno) {
 		return service.create(aluno);
 	}
 
 	@PutMapping(path = "aluno")
-	public Aluno update(@RequestBody Aluno aluno) {
+	public Aluno update(@Valid @RequestBody Aluno aluno) {
 		return service.update(aluno);
 	}
 	
